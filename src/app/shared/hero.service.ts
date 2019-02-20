@@ -56,4 +56,10 @@ export class HeroService {
     return this.http.delete<Hero>(url, this.httpOptions);
   }
 
+  searchHeroes(term: string): Observable<Hero[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`);
+  }
 }
