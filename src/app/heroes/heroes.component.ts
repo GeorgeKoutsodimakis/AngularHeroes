@@ -17,12 +17,12 @@ export class HeroesComponent implements OnInit {
     this.gerHeroes();
   }
 
-  onSelectHero(hero: Hero): void {
-    this.selectedHero = hero;
-    console.log(hero);
-  }
+  // onSelectHero(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   }
 
   gerHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => (this.heroes = heroes));
   }
+
 }
